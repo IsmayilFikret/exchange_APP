@@ -1,3 +1,4 @@
+import 'package:exchange/global/custom_buttom.dart';
 import 'package:exchange/global/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -109,49 +110,29 @@ class _MyAppState extends State<MyApp> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ElevatedButton.icon(
-                    onPressed: () {
+                  CustomButtom(
+                    onPress: () {
                       dollarChange();
                     },
-                    icon: const Icon(Icons.attach_money),
-                    label: const Text(
-                      'dollar',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
+                    buttonTitle: 'dollar',
                   ),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      rublChange();
-                    },
-                    icon: const Icon(Icons.attach_money),
-                    label: const Text(
-                      'rubl',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      tlChange();
-                    },
-                    icon: const Icon(Icons.attach_money),
-                    label: const Text(
-                      'tl',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  ElevatedButton.icon(
-                    onPressed: () {
+                  CustomButtom(
+                    onPress: () {
                       euroChange();
                     },
-                    icon: const Icon(Icons.attach_money),
-                    label: const Text(
-                      'euro',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
+                    buttonTitle: 'euro',
+                  ),
+                  CustomButtom(
+                    onPress: () {
+                      rublChange();
+                    },
+                    buttonTitle: 'rubl',
+                  ),
+                  CustomButtom(
+                    onPress: () {
+                      tlChange();
+                    },
+                    buttonTitle: 'tl',
                   ),
                 ],
               ),
