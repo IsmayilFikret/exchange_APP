@@ -1,3 +1,4 @@
+import 'package:exchange/global/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -90,13 +91,15 @@ class _MyAppState extends State<MyApp> {
           children: [
             Text(
               'exchange : ${number != null ? '$number $valyuta' : ''}',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 200,
             ),
-            TextField(
+            CustomTextField(
+              hintText: 'manat',
               controller: controller,
+              inputype: TextInputType.number,
             ),
             const SizedBox(
               height: 36,
