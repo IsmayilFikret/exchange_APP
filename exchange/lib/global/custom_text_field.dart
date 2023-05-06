@@ -35,23 +35,25 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14),
-      decoration: BoxDecoration(
-        color: Colors.white38,
-        border: Border.all(color: Colors.white),
-        borderRadius: BorderRadius.circular(30),
-      ),
-      child: TextFormField(
-        keyboardType: widget.inputype,
-        controller: widget.controller,
-        decoration: InputDecoration(
-          hintText: widget.hintText,
-          suffixIcon: IconButton(
-            onPressed: () {
-              clearTextField();
-            },
-            icon: const Icon(Icons.clear),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14),
+        decoration: BoxDecoration(
+          color: Colors.blueGrey.shade200,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: TextFormField(
+          keyboardType: widget.inputype,
+          controller: widget.controller,
+          decoration: InputDecoration(
+            hintText: widget.hintText,
+            suffixIcon: IconButton(
+              onPressed: () {
+                clearTextField();
+              },
+              icon: const Icon(Icons.clear),
+            ),
           ),
         ),
       ),
