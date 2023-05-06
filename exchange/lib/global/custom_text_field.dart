@@ -27,6 +27,12 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
+  void clearTextField() {
+    setState(() {
+      widget.controller.clear();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,7 +48,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
         decoration: InputDecoration(
           hintText: widget.hintText,
           suffixIcon: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              clearTextField();
+            },
             icon: const Icon(Icons.clear),
           ),
         ),
