@@ -97,6 +97,14 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   controller.clear();
+  //   number = null;
+  //   valyuta = '';
+  // }
+
   Column _body() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
