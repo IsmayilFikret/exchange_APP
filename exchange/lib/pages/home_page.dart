@@ -81,6 +81,15 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void clear() {
+    if (controller.text.isEmpty) {
+      setState(() {
+        number = null;
+        valyuta = '';
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,13 +141,20 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }
 
   AppBar _appBar() {
     return AppBar(
+      actions: [
+        IconButton(
+            onPressed: () {
+              clear();
+            },
+            icon: Icon(Icons.clear_all))
+      ],
       centerTitle: true,
       title: const Text('EXCHANGE'),
     );

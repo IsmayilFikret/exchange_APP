@@ -52,7 +52,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               onPressed: () {
                 clearTextField();
               },
-              icon: const Icon(Icons.clear),
+              icon: const Icon(Icons.clear_all),
             ),
           ),
         ),
