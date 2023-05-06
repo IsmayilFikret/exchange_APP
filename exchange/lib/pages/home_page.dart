@@ -81,13 +81,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void clear() {
-    if (controller.text.isEmpty) {
-      setState(() {
-        number = null;
-        valyuta = '';
-      });
-    }
+  void clearAllData() {
+    setState(() {
+      controller.clear();
+      number = null;
+      valyuta = '';
+    });
   }
 
   @override
@@ -103,13 +102,13 @@ class _MyHomePageState extends State<MyHomePage> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         ExchangeText(number: number, valyuta: valyuta),
-        _sizedBox(200),
+        _customSizedBox(200),
         CustomTextField(
           hintText: 'manat',
           controller: controller,
           inputype: TextInputType.number,
         ),
-        _sizedBox(40),
+        _customSizedBox(40),
         Padding(
           padding: const EdgeInsets.only(bottom: 24),
           child: Row(
@@ -139,6 +138,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 buttonTitle: 'tl',
               ),
+              FloatingActionButton(
+                child: const Icon(Icons.clear_all),
+                onPressed: () {
+                  clearAllData();
+                },
+              ),
             ],
           ),
         ),
@@ -148,20 +153,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   AppBar _appBar() {
     return AppBar(
-      actions: [
-        IconButton(
-            onPressed: () {
-              clear();
-            },
-            icon: const Icon(Icons.clear_all))
-      ],
       centerTitle: true,
       title: const Text('EXCHANGE'),
     );
   }
 }
 
-SizedBox _sizedBox(double value) {
+SizedBox _customSizedBox(double value) {
   return SizedBox(
     height: value,
   );

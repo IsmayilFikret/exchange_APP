@@ -27,12 +27,6 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  void clearTextField() {
-    setState(() {
-      widget.controller.clear();
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -48,12 +42,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
           controller: widget.controller,
           decoration: InputDecoration(
             hintText: widget.hintText,
-            suffixIcon: IconButton(
-              onPressed: () {
-                clearTextField();
-              },
-              icon: const Icon(Icons.clear_all),
-            ),
           ),
         ),
       ),

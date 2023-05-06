@@ -14,9 +14,6 @@ class CustomButtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-        onPressed: onPress,
-        icon: const Icon(Icons.attach_money),
-        label: Text(buttonTitle));
+    return ElevatedButton(onPressed: onPress, child: Text(buttonTitle));
   }
 }
