@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   const CustomTextField({
     super.key,
     required this.hintText,
@@ -18,10 +18,15 @@ class CustomTextField extends StatelessWidget {
   final bool? autoFocus;
   final TextEditingController controller;
   final bool? obscureText;
-
   final IconData? icon;
   final VoidCallback? onPress;
   final TextInputType? inputype;
+
+  @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,10 +37,10 @@ class CustomTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextFormField(
-        keyboardType: inputype,
-        controller: controller,
+        keyboardType: widget.inputype,
+        controller: widget.controller,
         decoration: InputDecoration(
-          hintText: hintText,
+          hintText: widget.hintText,
           suffixIcon: IconButton(
             onPressed: () {},
             icon: const Icon(Icons.clear),
