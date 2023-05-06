@@ -1,3 +1,4 @@
+import 'package:exchange/constans/exchange_data.dart';
 import 'package:flutter/material.dart';
 
 import '../global/custom_buttom.dart';
@@ -19,6 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double tl = 5.84;
   double rubl = 66.86;
   String valyuta = '';
+
   void dollarChange() {
     if (controller.text.isEmpty) {
       return;
@@ -91,10 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Text(
-          'exchange : ${number != null ? '$number $valyuta' : ''}',
-          style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-        ),
+        ExchangeText(number: number, valyuta: valyuta),
         _sizedBox(200),
         CustomTextField(
           hintText: 'manat',
