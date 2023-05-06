@@ -153,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               clear();
             },
-            icon: Icon(Icons.clear_all))
+            icon: const Icon(Icons.clear_all))
       ],
       centerTitle: true,
       title: const Text('EXCHANGE'),
