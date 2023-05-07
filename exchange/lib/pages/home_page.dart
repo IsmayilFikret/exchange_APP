@@ -110,13 +110,13 @@ class _MyHomePageState extends State<MyHomePage> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         ExchangeText(number: number, valyuta: valyuta),
-        _customSizedBox(200),
+        _customSizedBox(context),
         CustomTextField(
           hintText: 'manat',
           controller: controller,
           inputype: TextInputType.number,
         ),
-        _customSizedBox(40),
+        _customSizedBox(context),
         Padding(
           padding: const EdgeInsets.only(bottom: 24),
           child: Row(
@@ -167,8 +167,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-SizedBox _customSizedBox(double value) {
+SizedBox _customSizedBox(BuildContext context) {
   return SizedBox(
-    height: value,
+    height: MediaQuery.of(context).size.height * 0.2,
   );
 }
